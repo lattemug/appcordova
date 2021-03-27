@@ -28,19 +28,19 @@
             var dataString = "id_Mahasiswa=" + id_Mahasiswa + "&nim=" + nim + "&nama=" + nama + "&prodi=" + prodi + "&email=" + email + "&alamat=" + alamat + "&update=";
             $.ajax({
                 type: "POST",
-                url: "http://mahasiswa.great-site.net/Database/update.php",
+                url: "https://kaefdeap.000webhostapp.com/update.php",
                 data: dataString,
                 crossDomain: true,
                 cache: false,
                 beforeSend: function() {
-                    $("#update").val('Connecting...');
+                    $("#update").val('Loading');
                 },
                 success: function(data) {
                     if (data == "success") {
-                        alert("Updated");
-                        $("#update").val("update");
+                        alert("Data Updated");
+                        $("#update").val("Update");
                     } else if (data == "error") {
-                        alert("error");
+                        alert("Error");
                     }
                 }
             });
@@ -51,12 +51,12 @@
             var dataString = "id_Mahasiswa=" + id_Mahasiswa + "&delete=";
             $.ajax({
                 type: "GET",
-                url: "http://mahasiswa.great-site.net/Database/delete.php",
+                url: "https://kaefdeap.000webhostapp.com/delete.php",
                 data: dataString,
                 crossDomain: true,
                 cache: false,
                 beforeSend: function() {
-                    $("#delete").val('Connecting...');
+                    $("#delete").val('Loading');
                 },
                 success: function(data) {
                     if (data == "success") {
@@ -76,8 +76,8 @@
 <body>
     <div class="bar bar-header bar-positive" style="margin-bottom:80px;">
         <a href="index.html" class="button button-clear">Home</a>
-        <h1 class="title">Update Database</h1>
-        <a class="button button-clear" href="readjson.html">Read JSON</a>
+        <h1 class="title">Perbarui Data</h1>
+        <a class="button button-clear" href="readjson.html">Lihat Data</a>
     </div>
     <br/>
     <br/>
@@ -92,7 +92,7 @@
             <input type="text" id="nama" value="" />
         </div>
         <div class="item">
-            <label>prodi</label>
+            <label>Prodi</label>
             <input type="text" id="prodi" value="" />
         </div>
         <div class="item">
